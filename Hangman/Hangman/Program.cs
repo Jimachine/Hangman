@@ -10,11 +10,11 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            // Enter a word to be guessed, change this to take a random word from a file containing a list of words 
+
+
+            // Enter a word to be guessed and convert the entered word to an array of characters. Change this to take a random word from a file containing a list of words
             Console.WriteLine("Player 1, please enter a secret word for player 2 to guess: ");
             string secretWord = Console.ReadLine();
-            
-            // Convert the entered word to an array of characters
             var letters = secretWord.ToCharArray();
 
             // Count how many letters are in the word and then display that many underscores
@@ -33,7 +33,6 @@ namespace Hangman
                 // Create a char variable and give it the value of "letters"
                 char[] chars = new char[letters.Length];
                 chars = letters;
-
                 // Loop through every character in "chars" and check to see if any characters match those entered
                 foreach (char c in chars)
                 {
@@ -44,9 +43,10 @@ namespace Hangman
 
                     else
                     {
-                        Console.Write("*");
+                        Console.Write(" _ ");
                     }
                 }
+                
 
             }
         }
