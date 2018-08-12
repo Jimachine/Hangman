@@ -23,7 +23,7 @@ namespace Hangman
                 Console.Write(" _ ", ctr);
             }
 
-            // Guess a letter and check the array for a match
+            //Guess a letter and check the array for a match
             while (true)
             {
                 Console.WriteLine("Type a letter to guess the word: ");
@@ -33,20 +33,25 @@ namespace Hangman
                 // Create a char variable and give it the value of "letters"
                 char[] chars = new char[letters.Length];
                 chars = letters;
+
+                //var correctLetters = new List<char[]> { };
+                //correctLetters.Add(letters);
+
                 // Loop through every character in "chars" and check to see if any characters match those entered
                 foreach (char c in chars)
                 {
                     if (c == charGuess)
                     {
-                        Console.Write(charGuess);
+                        //chars.Add(guessedLetter);
+                        Console.Write(charGuess + " ");
                     }
 
                     else
                     {
-                        Console.Write(" _ ");
+                        Console.Write("_ ");
                     }
                 }
-                
+
 
             }
         }
