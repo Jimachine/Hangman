@@ -14,13 +14,19 @@ namespace Hangman
             string secretWord = Console.ReadLine();
             
             var letters = secretWord.ToCharArray();
-            string hiddenWord = "_";
 
             for (int ctr = 0; ctr < letters.Length; ctr++)
+            {
                 Console.Write(" _ ", ctr);
+            }
 
-            
-            
+            while (true)
+            {
+                Console.WriteLine("Type a letter to guess the word: ");
+                string guessedLetter = Console.ReadLine();
+
+                
+            }
         }
     }
 }
