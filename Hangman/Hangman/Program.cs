@@ -12,46 +12,32 @@ namespace Hangman
         {
 
 
-            // Enter a word to be guessed and convert the entered word to an array of characters. Change this to take a random word from a file containing a list of words
+            // Enter a word to be guessed
             Console.WriteLine("Player 1, please enter a secret word for player 2 to guess: ");
             string secretWord = Console.ReadLine();
-            var letters = secretWord.ToCharArray();
+            char[] guess = new char[secretWord.Length];
 
-            // Count how many letters are in the word and then display that many underscores
-            for (int ctr = 0; ctr < letters.Length; ctr++)
+            // Count how many letters are in the word and then store that many underscores in the 'guess' variable
+            for (int ctr = 0; ctr < secretWord.Length; ctr++)
             {
-                Console.Write(" _ ", ctr);
+                guess[ctr] = '_';
             }
 
-            //Guess a letter and check the array for a match
+            //Guess a letter and check the secret word for a match
             while (true)
             {
-                Console.WriteLine("Type a letter to guess the word: ");
-                string guessedLetter = Console.ReadLine();
-                char charGuess = Convert.ToChar(guessedLetter);
-
-                // Create a char variable and give it the value of "letters"
-                char[] chars = new char[letters.Length];
-                chars = letters;
-
-                //var correctLetters = new List<char[]> { };
-                //correctLetters.Add(letters);
-
-                // Loop through every character in "chars" and check to see if any characters match those entered
-                foreach (char c in chars)
+                Console.WriteLine("Type a letter to guess: ");
+                char playerGuess = char.Parse(Console.ReadLine());
+                
+                // If playerGuess matches a letter in 'secretWord' store it in 'guess'
+                for (int c = 0; c < secretWord.Length; c++)
                 {
-                    if (c == charGuess)
+                    if (playerGuess == secretWord[c])
                     {
-                        //chars.Add(guessedLetter);
-                        Console.Write(charGuess + " ");
-                    }
-
-                    else
-                    {
-                        Console.Write("_ ");
+                        guess[c] = playerGuess;
                     }
                 }
-
+                Console.WriteLine(guess);
 
             }
         }
