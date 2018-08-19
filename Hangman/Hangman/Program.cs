@@ -28,11 +28,17 @@ namespace Hangman
             {
                 Console.WriteLine("Type a letter to guess: ");
                 char playerGuess = char.Parse(Console.ReadLine());
-                
+                char[] secretChar = secretWord.ToCharArray();
+
                 // If playerGuess matches a letter in 'secretWord' store it in 'guess'
                 for (int c = 0; c < secretWord.Length; c++)
                 {
-                    if (playerGuess == secretWord[c])
+                    if (guess == secretChar)
+                    {
+                        Console.WriteLine("Well done! The secret word was: " + secretWord);
+                    }
+                    
+                    else if (playerGuess == secretWord[c])
                     {
                         guess[c] = playerGuess;
                     }
