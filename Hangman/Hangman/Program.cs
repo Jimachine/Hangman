@@ -38,18 +38,19 @@ namespace Hangman
                 // If playerGuess matches a letter in 'secretWord' store it in 'guess'
                 for (int c = 0; c < secretWord.Length; c++)
                 {
-                    string a = new string(guess);
-                    int d = string.Compare(a, secretWord);
-
-                    if (d == 0)
-                    {
-                        Console.WriteLine("Well done! The secret word was: " + secretWord);
-                        return;
-                    }
                     
-                    else if (playerGuess == secretChar[c])
+                    
+                    if (playerGuess == secretChar[c])
                     {
                         guess[c] = playerGuess;
+                        string a = new string(guess);
+                        int d = string.Compare(a, secretWord);
+
+                        if (d == 0)
+                        {
+                            Console.WriteLine("Well done! The secret word was: " + secretWord);
+                            return;
+                        }
                     }
                 }
                 
