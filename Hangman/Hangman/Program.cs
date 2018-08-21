@@ -12,9 +12,10 @@ namespace Hangman
         {
 
 
-            // Enter a word to be guessed
-            Console.WriteLine("Player 1, please enter a secret word for player 2 to guess: ");
-            string secretWord = Console.ReadLine();
+            Random rnd = new Random();
+            string[] listOfWords = System.IO.File.ReadAllLines(@"C:\Users\jimmy\Documents\Coding\Hangman\Hangman\Hangman\WordList.txt");
+            int wordIndex = rnd.Next(listOfWords.Length);
+            string secretWord = listOfWords[wordIndex];
             char[] guess = new char[secretWord.Length];
             char[] secretChar = secretWord.ToCharArray();
             
